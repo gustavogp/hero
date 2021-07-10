@@ -12,6 +12,8 @@ func init() {
 	fmt.Printf("%v\n", "I'm born! Ugh! Ugh! Ugh!")
 }
 
+func (p Orc) implementsIHero() {}
+
 func (p Orc) move() {
 	p.position = p.position + p.speed
 	fmt.Println("Ugh, come here!")

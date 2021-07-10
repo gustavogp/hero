@@ -12,6 +12,8 @@ func init() {
 	fmt.Printf("%v\n", "Ready to fight for our king")
 }
 
+func (p Paladin) implementsIHero() {}
+
 func (p Paladin) move() {
 	p.position = p.position + p.speed
 }
