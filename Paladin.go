@@ -12,22 +12,26 @@ func init() {
 	fmt.Printf("%v\n", "Ready to fight for our king")
 }
 
-func (p Paladin) implementsIHero() {}
-
 func (p Paladin) move() {
-	p.position = p.position + p.speed
+	ah := new(AHero)
+	ah.position, ah.speed = p.position, p.speed
+	ah.move()
 }
 
 func (p Paladin) die() {
-	fmt.Printf("%v\n", "Nooooo!!!")
+	new(AHero).die()
 }
 
 func (p Paladin) status() {
-	fmt.Printf("Life Remainnig: %v\n", p.life)
+	ah := new(AHero)
+	ah.life = p.life
+	ah.status()
 }
 
 func (p Paladin) shout() {
-	fmt.Printf("I am %v\n", p.name)
+	ah := new(AHero)
+	ah.name = p.name
+	ah.shout()
 }
 
 func (p Paladin) attack(oponent *Orc) {
