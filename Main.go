@@ -2,10 +2,8 @@ package main
 
 func main() {
 
-	player1 := new(Paladin)
-	player1.AHero = AHero{8, "Pal the Great", 2, 0, 1}
-	player2 := new(Orc)
-	player2.AHero = AHero{4, "Ugly the Orc", 2, 0, 1}
+	var player1 = &Paladin{&AHero{8, "Pal the Great", 2, 0, 1}}
+	var player2 = &Orc{&AHero{4, "Ugly the Orc", 2, 0, 1}}
 
 	player1.move()
 	player2.move()

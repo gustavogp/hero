@@ -5,7 +5,7 @@ import (
 )
 
 type Orc struct {
-	AHero
+	*AHero
 }
 
 func init() {
@@ -13,32 +13,26 @@ func init() {
 }
 
 func (p Orc) move() {
-	ah := new(AHero)
-	ah.position, ah.speed = p.position, p.speed
-	ah.move()
+	p.AHero.move()
 	fmt.Println("Ugh, come here!")
 }
 
 func (p Orc) die() {
-	new(AHero).die()
+	p.AHero.die()
 }
 
 func (p Orc) status() {
-	ah := new(AHero)
-	ah.life = p.life
-	ah.status()
+	p.AHero.status()
 }
 
 func (p Orc) shout() {
-	ah := new(AHero)
-	ah.name = p.name
-	ah.shout()
+	p.AHero.shout()
 }
 
 func (p Orc) attack(oponent *Paladin) {
 	fmt.Printf("%v\n", "Eat that human")
 	oponent.life = oponent.life - p.power
 	if oponent.life == 0 {
-		oponent.die()
+		oponent.AHero.die()
 	}
 }
