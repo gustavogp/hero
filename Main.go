@@ -2,6 +2,10 @@ package main
 
 func main() {
 
+	// checking that types implement interface
+	var _ IHero = Paladin{}
+	var _ IHero = (*Orc)(nil)
+
 	var player1 = &Paladin{&AHero{8, "Pal the Great", 2, 0, 1}}
 	var player2 = &Orc{&AHero{4, "Ugly the Orc", 2, 0, 1}}
 
