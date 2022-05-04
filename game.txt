@@ -1,0 +1,61 @@
+====== The HERO: an object oriented game ======
+
+In this game, all players have this following attributes: a number of Life, a name, a speed, a position and a power (integer).
+All player start with a power of 1.
+
+All players will have multiple actions available:
+Move: will increase the position by the player's speed.
+Die: will write in the console "Nooooo!!!"
+Status: will write in the console the number of life remaining
+Shout: will write in the console "I am " + the name of the player.
+Attack: reduce the life of the opponent by your power. And call Die if the opponent is dead.
+
+
+In our game, we would have 2 types of players.
+
+The Paladin:
+Stats: { Life: 8, Name: "Pal the Great", Speed:2, Position: 0}
+The Paladin will write to the console "Ready to fight for our king!" when he is created.
+The Paladin, before attacking, will write to the console "Take that ugly beast!"
+
+The Orc:
+Stats: { Life: 4, Name:"Ugly the Orc", Speed:2, Position: 0}
+The Orc will write to the console "I'm born! Ugh Ugh Ugh" when he is created.
+The Orc, before attacking, will write to the console "Eat that Human!"
+The Orc, after moving, will write to the console "Ugh, come here!".
+
+
+
+Using interface, abstract and classes, implement the following Main method to get the expected output below:
+
+
+static void Main(string[] args)
+{
+    IPlayer player1 = new Paladin();
+    IPlayer player2 = new Orc();
+    player1.Move();
+    player2.Move();
+    player1.Shout();
+    player2.Shout();
+    player1.Attack(player2);
+    player2.Attack(player1);
+    player1.Attack(player2);
+    player2.Status();
+    player1.Attack(player2);
+    player1.Attack(player2);
+}
+
+
+=== OUTPUT ===
+Ready to fight for our king!
+I'm born! Ugh Ugh Ugh
+Ugh, come here!
+I am Pal the Great
+I am Ugly the Orc
+Take that ugly beast!
+Eat that Human!
+Take that ugly beast!
+I have 2 lifes remaining
+Take that ugly beast!
+Take that ugly beast!
+Nooooo!!!
