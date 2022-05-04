@@ -6,4 +6,5 @@ type IHero interface {
 	die()
 	status()
 	shout()
+	attack(*AHero)
 }

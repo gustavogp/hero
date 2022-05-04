@@ -10,20 +10,27 @@ type AHero struct {
 	power    int
 }
 
-func (ah AHero) implementsIHero() {}
+func (ah *AHero) implementsIHero() {}
 
-func (ah AHero) move() {
+func (ah *AHero) move() {
 	ah.position = ah.position + ah.speed
 }
 
-func (ah AHero) die() {
+func (ah *AHero) die() {
 	fmt.Printf("%v\n", "Nooooo, I'm d...!!!")
 }
 
-func (ah AHero) status() {
+func (ah *AHero) status() {
 	fmt.Printf("Life Remainnig: %v\n", ah.life)
 }
 
-func (ah AHero) shout() {
+func (ah *AHero) shout() {
 	fmt.Printf("I am %v\n", ah.name)
+}
+
+func (ah *AHero) attack(oponentAH *AHero) {
+	oponentAH.life = oponentAH.life - ah.power
+	if oponentAH.life == 0 {
+		oponentAH.die()
+	}
 }

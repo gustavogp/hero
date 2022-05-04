@@ -12,10 +12,7 @@ func init() {
 	fmt.Printf("%v\n", "I'm born! Ugh! Ugh! Ugh!")
 }
 
-func (p Orc) attack(oponent *Paladin) {
+func (o Orc) attack(oponentAH *AHero) {
 	fmt.Printf("%v\n", "Eat that human")
-	oponent.life = oponent.life - p.power
-	if oponent.life == 0 {
-		oponent.die()
-	}
+	o.AHero.attack(oponentAH)
 }
