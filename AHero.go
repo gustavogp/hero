@@ -21,7 +21,7 @@ func (ah *AHero) die() {
 }
 
 func (ah *AHero) status() {
-	fmt.Printf("Life Remainnig: %v\n", ah.life)
+	fmt.Printf("%v's Life Remainnig: %v\n", ah.name, ah.life)
 }
 
 func (ah *AHero) shout() {
